@@ -1,13 +1,15 @@
 import { useAuth } from '../lib/auth'
+import { Button } from '@chakra-ui/react'
 
 export default function Index() {
   const auth = useAuth()
   return auth.user ? (
     <div>
+
       <p>Email: {auth.user.email}</p>
-      <button onClick={(e) => auth.signout()}>Sign Out</button>
+      <Button onClick={(e) => auth.signout()}>Sign Out2</Button>
     </div>
   ) : (
-    <button onClick={(e) => auth.signinWithGitHub()}>Sign In</button>
+    <Button onClick={(e) => auth.signinWithGitHub()}>Sign In</Button>
   )
 }
